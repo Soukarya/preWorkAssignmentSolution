@@ -68,24 +68,28 @@ public class Main {
 		System.out.print("Enter a number:");
 		int n = sc.nextInt();
 		boolean isPrime = true;
-		if (n == 1) {
-			isPrime = false;
-		} else if (n == 2 || n == 3) {
-			isPrime = true;
-		} else if (n % 2 == 0 || n % 3 == 0) {
-			isPrime = false;
-		} else {
-			for (int i = 5; i * i <= n; i = i + 6) {
-				if (n % i == 0 || n % (i + 2) == 0) {
-					isPrime = false;
-					break;
+		if(n<0) {
+			System.out.println("Negative numbers are not prime");
+		}else {
+			if (n==0 || n == 1) {
+				isPrime = false;
+			} else if (n == 2 || n == 3) {
+				isPrime = true;
+			} else if (n % 2 == 0 || n % 3 == 0) {
+				isPrime = false;
+			} else {
+				for (int i = 5; i * i <= n; i = i + 6) {
+					if (n % i == 0 || n % (i + 2) == 0) {
+						isPrime = false;
+						break;
+					}
 				}
 			}
-		}
-		if (!isPrime) {
-			System.out.println("Not a prime number");
-		} else {
-			System.out.println("Prime number");
+			if (!isPrime) {
+				System.out.println("Not a prime number");
+			} else {
+				System.out.println("Prime number");
+			}
 		}
 	}
 
