@@ -106,6 +106,7 @@ public class Main {
 			first = second;
 			second = temp;
 		}
+		System.out.println();
 
 	}
 
